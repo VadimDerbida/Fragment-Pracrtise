@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        app:title="Version Game"
+        app:titleCentered="true"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="170dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/stroke"
+        app:backgroundTint="@null">
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+
+            android:src="@drawable/cupcake" />
+
+        <TextView
+            android:id="@+id/android_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="-165dp"
+
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/min_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/plus_button"
+        android:background="@drawable/gamebutton"
+        android:text="-"
+        android:textSize="24dp"
+        app:backgroundTint="@null"
+        />
+    <Button
+        android:id="@+id/plus_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toEndOf="@id/min_button"
+        app:layout_constraintTop_toBottomOf="@id/screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/gamebutton"
+        android:text="+"
+        android:textSize="24dp"
+        app:backgroundTint="@null"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

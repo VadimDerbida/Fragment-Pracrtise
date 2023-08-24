@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/firstScreenFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.dg.lesson3.presentation.ui.auth.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action
+            android:id="@+id/action_signUpFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.dg.lesson3.presentation.ui.auth.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+
+        <argument
+            android:name="user"
+            app:argType="com.dg.lesson3.domain.User"/>
+        <action
+            android:id="@+id/action_dashboardFragment_to_firstScreenFragment"
+            app:destination="@id/firstScreenFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/firstScreenFragment"
+        android:name="com.dg.lesson3.presentation.ui.auth.FirstScreenFragment"
+        android:label="fragment_first_screen"
+        tools:layout="@layout/fragment_first_screen" >
+        <action
+            android:id="@+id/action_firstScreenFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_firstScreenFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.dg.lesson3.presentation.ui.auth.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_firstScreenFragment2"
+            app:destination="@id/firstScreenFragment" />
+    </fragment>
+
+
+</navigation>
